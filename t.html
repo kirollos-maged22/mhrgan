@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مدونة الأحداث التاريخية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+ <style>
+    /* إعدادات عامة */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #ffefc5;
+      color: #333;
+
+      
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .logo{
+        height: 80px;
+        display: flex;
+    }
+    a:hover{
+        color: #574307;
+        transition: 450ms ; 
+        
+    }
+
+    /* الشريط العلوي */
+    .navbar {
+      background-color: #0c0b14;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+
+
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      margin: 0 10px;
+      border: 3px solid ;
+      background-color: #181824;
+      border-radius: 3px;
+      transition: color 0.3s;
+      transition: transform 0.5;
+    }
+
+
+    .navbar a:hover {
+      color: #ffca28;
+    }
+
+    .hero{
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        overflow: hidden;
+    }
+
+    .hero video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blure(30px);
+        background: rgb(0, 0, 0, 0.6);
+        z-index: 1;
+        }
+
+    .hero-text {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5em;
+        font-family: monospace;
+        margin-bottom: 10px;
+        color: white;
+        text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 20px rgb(255, 255, 255),
+               0 0 30px rgb(255, 255, 255),
+               0 0 40px rgb(255, 255, 255);
+    }
+
+    .hero-text p {
+        font-size: 1.2em;
+               text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 20px rgb(255, 255, 255),
+               0 0 40px rgb(255, 255, 255);
+    }
+
+
+    /* العنوان الرئيسي */
+    .main-title {
+      text-align: center;
+      margin: 20px 20px;
+      padding: 20px;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 2em;
+      color: #1b3740;
+      text-shadow: 0 0 5px #fff,
+                   0 0 10px #fff,
+                   0 0 20px rgb(0, 16, 33),
+                   0 0 30px rgb(0, 41, 68),
+                   0 0 40px rgb(255, 255, 255);
+    }
+
+    /* الكروت */
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0 20px 40px;
+      background-color: #ffefc5;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 300px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.06);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      position: relative;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #6d4c41;
+      text-decoration: none;
+    }
+
+    .card-text {
+      font-size: 0.95em;
+      line-height: 1.6;
+      text-decoration: none;
+    }
+
+    /* الفوتر */
+    footer {
+      background-color: #181824;
+      text-align: center;
+      height: 100px;
+      color: #ffefc5;
+      align-items: center;
+      margin-top: 0px;
+      padding: 30px 0 0 0;
+      
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div><strong dir="rtl">مدونة تاريخ المجامع المسكونيه</strong></div>
+        <div class="logo"> <img src="1200x1200bf-60-removebg-preview.png" alt="logo"></div>
+    <div>
+      <a href="#">الرئيسية</a>
+      <a href="#">الأحداث</a>
+      <a href="#">عنّا</a>
+      <a href="#">تواصل</a>
+    </div>
+  </div>
+
+    <section class="hero">
+    <video autoplay muted loop playsinline>
+        <source src="كيف أوقف مجمع نيقية فوضى بدعة آريوس؟.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو
+    </video>
+    <div class="hero-text">
+        <h1>مرحبا بكم في مدونه المجامع المسكونيه</h1>
+        <p>تعرف علي مواضع فاصله في تاريخ كنيستنا</p>
+    </div>
+    </section>
+
+  <!-- Main Title -->
+  <h1 class="main-title">أحداث غيرت التاريخ</h1>
+
+
+  <!-- Cards -->
+  <a href="#"><div dir="rtl" class="cards">
+    <div class="card">
+      <img src="Nicea.jpg" alt="مجمع نيقيه">
+      <div class="card-content">
+        <div class="card-title">مجمع نيقيه </div>
+        <div class="card-text">
+            هو المجمع المسكوني الأول Council of Nicaea وكان بسبب بدعة آريوس Arius الهرطوقي، وذلك بأن كتب البابا الكسندروس إلى الملك قسطنطين
+             الكبير يطلب منه عقد مجمع مسكوني للبت في هذه البدعة 
+</div>
+      </div>
+    </div></a>
+
+   <a href="#"> <div dir="rtl" class="card">
+      <img src="Concile-Ephese-Fourviere-detail.jpg" alt="مجمع افسس">
+      <div class="card-content">
+        <div class="card-title">مجمع افسس</div>
+        <div class="card-text">
+            بدعة بيلاجيوس <br>
+           بدعة نسطور بطريرك القسطنطينية <br>
+             
+        </div>
+      </div>
+    </div>
+    </a>
+    <a href="https://st-takla.org/Coptic-History/CopticHistory_02-History-of-the-Coptic-Church-Councils-n-Christian-Heresies/Encyclopedia-Coptica-History__005-Magma3-Nekia-325.html">
+    <div dir="rtl" class="card">
+      <img src="PopeKirellos.jpg" alt="مجمع القسطنطينيه">
+      <div class="card-content">
+        <div class="card-title">مجمع القسطنطينيه</div>
+        <div class="card-text">1- بدعة أبوليناريوس أسقف اللاذقية <br>
+2- بدعة أوسابيوس مجدد تعاليم سابليوس <br>
+
+3- بدعة مكدونيوس أسقف القسطنطينية المعزول <br></div>
+      </div>
+    </div>
+    </a>
+  </div>
+
+
+  <!-- Footer -->
+
+  <footer>
+    &copy; تاريخ المجامع المسكونيه | كنيسه جيؤرجيوس بابي طاقيه | يوساب&بافلي&جوفاني | 2025
+  </footer>
+
+</body>
+</html>
